@@ -1,0 +1,103 @@
+// ----------------------------------
+//  typography.scss
+// ----------------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+}
+
+// headings
+.headline {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-weight: 100;
+}
+
+.headline--big {
+  $map: ($mobile: 24px, $desktop: 35px);
+  font-size: linear-interpolation($map);
+
+  @include min-screen($desktop) {
+    $map: ($desktop: 35px, $wide-desktop: 45px);
+    font-size: linear-interpolation($map);
+  }
+}
+
+.headline--medium {
+  $map: ($mobile: 20px, $desktop: 25px);
+  font-size: linear-interpolation($map);
+  font-weight: 600;
+
+  @include min-screen($desktop) {
+    $map: ($desktop: 25px, $wide-desktop: 30px);
+    font-size: linear-interpolation($map);
+  }
+}
+
+.headline--small {
+  $map: ($mobile: 18px, $desktop: 24px);
+  font-size: linear-interpolation($map);
+
+  @include min-screen($desktop) {
+    font-size: 24px;
+  }
+}
+
+// paragraphs
+.text {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.3;
+  letter-spacing: 0;
+
+  @include min-screen($desktop) {
+    $map: ($mobile: 14px, $desktop: 16px);
+    font-size: linear-interpolation($map);
+  }
+}
+
+// utils
+.text--light-extra {
+  font-weight: 100;
+}
+
+.text--light {
+  font-weight: 300;
+}
+
+.text--semi-bold {
+  font-weight: 600;
+}
+
+.text--bold {
+  font-weight: 700;
+}
+
+.text--left {
+  text-align: left;
+}
+
+.text--right {
+  text-align: right;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.text--uppercase {
+  text-transform: uppercase;
+}
+
+.text--black {
+  color: map-get($colors-font, dark);
+}

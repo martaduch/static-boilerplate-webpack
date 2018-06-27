@@ -1,0 +1,17 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "at-rule-empty-line-before": [ "always", {
+      "ignore": ["after-comment", "inside-block", "blockless-after-same-name-blockless", "blockless-after-blockless"]
+    }],
+    "declaration-empty-line-before": "never",
+    "number-leading-zero": null,
+    "property-no-unknown": [ true, {
+      "ignoreProperties": [
+        "composes"
+      ]
+    }],
+    "color-hex-case": "upper",
+    "unit-whitelist": ["em", "rem", "%", "s", "px", "vh", "vw", "deg"]
+  }
+}

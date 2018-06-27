@@ -1,0 +1,59 @@
+// ----------------------------------
+//  vars.scss
+// ----------------------------------
+
+$content-width: 1400px;
+
+// breakpoints
+// ----------------------------------
+
+$mobile:          320px;
+$phone-land:      480px;
+$tablet-port:     640px;
+$tablet:          768px;
+$tablet--big:     1024px;
+$desktop--small:  1100px;
+$desktop:         1280px;
+$desktop-medium:  1440px;
+$wide-desktop:    1920px;
+
+// fonts
+// ----------------------------------
+
+$global-font-size: 16px;
+
+$fonts: (
+  main: 'Roboto'
+);
+
+// named color variables
+// ----------------------------------
+$color-black: #000;
+$color-white: #FFF;
+$color-transparent: transparent;
+
+$colors-palette: (
+  brand-green:      #37ED9B,
+  brand-green-dark: #26AF73,
+  brand-dark:       #291F2D,
+  brand-lighter-dark: #302436,
+  beige:            #F2F2F2,
+  gray:             #A6A6A6,
+);
+
+$colors-font: (
+  light: $color-white,
+  dark:  $color-black
+);
+
+// animation speeds
+// ----------------------------------
+
+$time-fast: 0.2s;
+
+$animations: (
+  fast: 0.2s,
+  mid:  0.4s,
+  slow: 0.6s,
+  lazy: 1s
+);

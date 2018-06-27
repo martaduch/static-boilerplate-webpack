@@ -1,0 +1,76 @@
+// ----------------------------------
+//  mixins.scss
+// ----------------------------------
+
+//  MEDIA QUERIES MIXINS
+// ----------------------------------
+
+@mixin max-screen($res) {
+  @media screen and (max-width: $res - 1) {
+    @content;
+  }
+}
+
+@mixin min-screen($res) {
+  @media screen and (min-width: $res) {
+    @content;
+  }
+}
+
+@mixin at-screen($res, $res1) {
+  @media screen and (min-width: $res) and (max-width: $res1) {
+    @content;
+  }
+}
+
+//  FLUID FONT MIXINS
+// ----------------------------------
+@function linear-interpolation($map) {
+  $keys: map-keys($map);
+
+  @if (length($keys) != 2) {
+    @error 'linear-interpolation() $map must be exactly 2 values';
+  }
+  // The slope
+  $m: (map-get($map, nth($keys, 2)) - map-get($map, nth($keys, 1))) / (nth($keys, 2) - nth($keys, 1));
+
+  // The y-intercept
+  $b: map-get($map, nth($keys, 1)) - $m * nth($keys, 1);
+
+  // Determine if the sign should be positive or negative
+  $sign: '+';
+
+  @if ($b < 0) {
+    $sign: '-';
+    $b: abs($b);
+  }
+
+  @return calc(#{$m * 100}vw #{$sign} #{$b});
+}
+
+//  ANIMATIONS
+// ----------------------------------
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+// GRADIENT
+@mixin gradient-vertical($start-color: #fff, $end-color: #000, $start-percent: 0%, $end-percent: 100%) {
+  background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent);
+  background-repeat: repeat-x;
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr="#{ie-hex-str($start-color)}", endColorstr="#{ie-hex-str($end-color)}", GradientType=0);
+}

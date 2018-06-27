@@ -1,0 +1,47 @@
+// ----------------------------------
+//  utils.scss
+// ----------------------------------
+
+.u-relative {
+  position: relative;
+}
+
+.u-flex {
+  display: flex;
+}
+
+.u-inline-block {
+  display: inline-block;
+}
+
+//  alignment utilities
+// ----------------------------------
+
+.u-hide--phone {
+  display: none;
+
+  @include min-screen($desktop--small) {
+    display: inherit;
+  }
+}
+
+.u-hide--tablet-big {
+  @include max-screen($tablet--big) {
+    display: none;
+  }
+}
+
+.u-hide--desktop {
+  @include min-screen($desktop--small) {
+    display: none;
+  }
+}
+
+.u-align--center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.u-no-padding {
+  padding: 0;
+}

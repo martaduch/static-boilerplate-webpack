@@ -1,0 +1,31 @@
+// ----------------------------------
+//  global.scss
+// ----------------------------------
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: map-get($fonts, main);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  background-color: map-get($colors-palette, brand-dark);
+  color: map-get($colors-font, light);
+}
+
+img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
