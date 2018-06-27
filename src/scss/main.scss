@@ -8,11 +8,6 @@
 @import 'core/_vars.scss';
 @import 'core/_mixins.scss';
 
-// vendors
-@import '~normalize.css/normalize.css';
-@import '~fullPage.js/dist/jquery.fullpage.css';
-@import '~nouislider/distribute/nouislider.min.css';
-
 // global
 @import 'global/_global.scss';
 @import 'global/_typography.scss';
